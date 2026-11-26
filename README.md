@@ -12,6 +12,9 @@ cp .env.example .env          # completar DATABASE_URL (Neon) y SECRET_KEY
 ```
 `DATABASE_URL` se acepta tal cual la entrega Neon (`postgresql://…?sslmode=require&channel_binding=require`).
 
+## Documentación de la API
+Swagger UI en `/docs` y esquema OpenAPI en `/openapi.json`, también en producción. Para ocultarlos: `ENABLE_DOCS=false`.
+
 ## Pruebas (BD REAL, se vacía al terminar — nunca producción)
 ```bash
 TEST_DATABASE_URL=postgresql://… .venv/bin/pytest

@@ -21,9 +21,9 @@ app = FastAPI(
     title=settings.APP_NAME,
     version="1.0.0",
     description="API REST del CRM comercial de BeMarketing (B2B). Leads alimentados por un agente externo vía API key.",
-    docs_url="/docs" if settings.is_dev or settings.APP_ENV == "staging" else None,
+    docs_url="/docs" if settings.ENABLE_DOCS else None,
     redoc_url=None,
-    openapi_url="/openapi.json" if settings.is_dev or settings.APP_ENV == "staging" else None,
+    openapi_url="/openapi.json" if settings.ENABLE_DOCS else None,
 )
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)

@@ -9,6 +9,7 @@ class Settings(BaseSettings):
 
     APP_NAME: str = "BeMarketing CRM"
     APP_ENV: str = "development"
+    ENABLE_DOCS: bool = True  # Swagger en /docs y esquema en /openapi.json
 
     DATABASE_URL: str
 
